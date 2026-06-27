@@ -305,6 +305,13 @@ def switchScreenTo(delta,bypass=False):
     if screenNum>=-1 and screenNum<=2 or screenNum==3:
 
         if bypass:
+            if delta==1:
+                currentImgPage=0
+                loadImages(currentImgPage,12)
+            elif delta==2:
+                viewedImage=23
+                currentImgPageCompendium=0
+                loadImagesCompendium(currentImgPageCompendium,24)
             threading.Thread(target=ssAsync,args=(delta,)).start()
         elif currentScreen==1:
 
