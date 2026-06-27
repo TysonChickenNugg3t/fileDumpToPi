@@ -737,13 +737,13 @@ while running:
                 screen.blit(ShrineIcon2, (screenWidth-ShrineIcon2.get_size()[0]-ShrineIcon2.get_size()[1]*.2+modifierPage(0),screenHeight-ShrineIcon.get_size()[1]*1.2))
                 screen.blit(DateTime, (ShrineIcon2.get_size()[1]*.2+modifierPage(0),screenHeight-(DateTime.get_size()[1])-ShrineIcon.get_size()[1]*.2))
 
-                if mouseDownLocation[0]<screenHeight*.1 and mouseDownLocation[1]<screenHeight*.1:
+                if isMouseDown and mouseDownLocation[0]<screenHeight*.1 and mouseDownLocation[1]<screenHeight*.1:
                     running=False
-                elif mouseDownLocation[0]<screenHeight*.4 and mouseDownLocation[1]<screenHeight*.1:
+                elif isMouseDown and mouseDownLocation[0]<screenHeight*.4 and mouseDownLocation[1]<screenHeight*.1:
                     switchScreenTo(-1,True)
-                elif mouseDownLocation[0]<screenHeight*.7 and mouseDownLocation[1]<screenHeight*.1:
+                elif isMouseDown and mouseDownLocation[0]<screenHeight*.7 and mouseDownLocation[1]<screenHeight*.1:
                     switchScreenTo(1,True)
-                elif mouseDownLocation[1]<screenHeight*.1:
+                elif isMouseDown and mouseDownLocation[1]<screenHeight*.1:
                     switchScreenTo(2,True)
 
                 # screen.blit(MapTitle,(screenWidth/2-MapTitle.get_size()[0]/2+modifierPage(0),screenHeight/90))
