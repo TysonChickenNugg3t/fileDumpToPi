@@ -757,6 +757,9 @@ while running:
             #####################!Album#####################!Album#####################!Album
             # screen.blit(BG,(0+modifierPage(1),0))
             if currentScreenGoal == 1 or math.floor(currentScreen)==1 or math.ceil(currentScreen)==1:
+                if not isViewImage and isMouseDown and mouseDownLocation[0]<screenHeight*.1 and mouseDownLocation[1]<screenHeight*.1:
+                    print("RESET")
+                    switchScreenTo(0,True)
                 
                 # screen.blit(Refresh,(0+modifierPage(1),0))
                 # if isMouseDown and mouseDownLocation[0]<screenHeight*RefreshScale and  mouseDownLocation[1]<screenHeight*RefreshScale:
@@ -827,14 +830,14 @@ while running:
                             (screenWidth/2-new.get_size()[0]/2,
                             screenHeight/2-new.get_size()[1]/2)
                         )
-                if isMouseDown and mouseDownLocation[0]<screenHeight*.1 and mouseDownLocation[1]<screenHeight*.1:
-                    print("RESET")
-                    switchScreenTo(0,True)
 
             # screen.blit(AlbumTitle,(screenWidth/2-AlbumTitle.get_size()[0]/2+modifierPage(1),screenHeight/90))
             #####################!Compendium#####################!Compendium#####################!Compendium
             if currentScreenGoal == 2 or math.floor(currentScreen)==2 or math.ceil(currentScreen)==2:
                 if not isViewImage:
+                    if isMouseDown and mouseDownLocation[0]<screenHeight*.1 and mouseDownLocation[1]<screenHeight*.1:
+                        print("RESET")
+                        switchScreenTo(0,True)
                     pages=len(list(compendium.keys()))//24+1
                     for i in range(pages):
                         if i == currentImgPageCompendium:screen.blit(compendiumDots,(screenWidth/2-spacingcompdots*(pages/2)+spacingcompdots*i,screenHeight/40))
@@ -907,9 +910,6 @@ while running:
                             (screenWidth/2-new.get_size()[0]/2,
                             screenHeight/2-new.get_size()[1]/2)
                         )
-                if isMouseDown and mouseDownLocation[0]<screenHeight*.1 and mouseDownLocation[1]<screenHeight*.1:
-                    print("RESET")
-                    switchScreenTo(0,True)
             
 
 
